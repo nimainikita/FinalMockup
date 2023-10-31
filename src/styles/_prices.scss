@@ -1,0 +1,103 @@
+.prices{
+  .swiper{
+    height: 230px;
+  }
+
+  .prices__item{
+    background: $white;
+    border:1px solid #eaeaea;
+    border-radius: 6px;
+    max-height: 72px;
+    min-height: 200px;
+    max-width: 260px;
+    padding:16px;
+  
+    .price, .term{
+      margin-top:16px;
+    }
+    .term{
+      display: flex;
+      justify-content: space-between;
+      .dropdown-button_price{
+        display: flex;
+        align-items: center;
+        background: $action-btn;
+        border-radius: 16px;
+        color:$white;
+        padding:4px 8px;
+      }
+    }
+    .title .title__title, .price .price__title, .term .term__title{
+      color:$menu-text-color
+    }
+  }
+
+  
+}
+.prices__section__content{
+  .prices__text{
+    margin-top: 32px;
+    max-width: 420px;
+    width: 100%;
+
+    .price__button{
+      margin-top: 16px;
+  
+
+      gap:6px;
+      font-size: 16px;
+      text-align: left;
+      font-family: 'TTLakes-medium';
+      &:hover{
+        color:$link-color--hover;
+      }
+    }
+  }
+
+}
+.prices-table{
+  display: none;
+  width: 100%;
+  border:none;
+  border-collapse: collapse;
+  thead{
+    background: $background;
+    padding: 16px;
+    th{
+      text-align: left;
+      padding: 16px;
+      color: $menu-text-color;
+      font-weight: 400;
+    }
+  }
+  tbody{
+    background: $white;
+    border-radius: 24px;
+  
+    td{
+      padding:16px;
+      
+    }
+    tr{
+      border-bottom: 1px solid #eaeaea;
+    }
+  }
+
+
+  .dropdown-button_price{
+    display: flex;
+    align-items: center;
+    background: $action-btn;
+    border-radius: 16px;
+    color:$white;
+    padding:4px 8px;
+  }
+}
+@media (min-width:768px) {
+  .prices{
+    display: none;
+  }
+  .prices-table{
+    display: table;
+  }
+}

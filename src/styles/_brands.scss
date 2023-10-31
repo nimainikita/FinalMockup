@@ -1,0 +1,16 @@
+//BRANDS
+.slider-section{
+  .swiper{
+    height: 110px;
+  }
+}
+@media (min-width:768px) {
+  .slider-section{
+    .swiper-container-wrapper{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 16px;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.repairs{
+  .swiper{
+    height: 200px;
+  }
+
+  .repairs__item{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    font-size: 16px;
+    font-family: 'TTLakes-medium';
+    min-height: 160px;
+    
+    p{
+      align-self: start;
+    }
+    .dropdown-button{
+      align-self: flex-end;
+    }
+  }
+}
