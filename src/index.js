@@ -50,10 +50,13 @@ function closeOpenBurger(event){
 
 }
 layerBlur.addEventListener('click', () => {
-  burgerMenu.style.left = '-100%';
-  isBurgerOpen = !isBurgerOpen;
-  layerBlur.style.display = 'none';
-  body.style.overflow = 'auto'
+  if(window.innerWidth < 1440){
+    burgerMenu.style.left = '-100%';
+    isBurgerOpen = !isBurgerOpen;
+    layerBlur.style.display = 'none';
+    body.style.overflow = 'auto'
+  }
+
 });
 openBurgerMenuBtn.addEventListener('click', closeOpenBurger);
 closeBurgerMenuBtn.addEventListener('click', closeOpenBurger);

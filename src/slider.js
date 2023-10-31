@@ -8,7 +8,8 @@ import 'swiper/css/pagination';
 //Слайдер
 function initSlider(){
   if(window.innerWidth < 768){
-    const swiper = new Swiper('.swiper', {
+    console.log("ехехе")
+    let swiper = new Swiper('.swiper', {
       slidesPerView: "auto",
       direction: "horizontal",
       loop:true,
@@ -16,23 +17,46 @@ function initSlider(){
       pagination:{
         el:".swiper-pagination"
       },
-
+      breakpoints:{
+        768:{
+          enabled: true,
+        }
+      },
       modules: [Navigation, Pagination],
     })
-  }else{
-    const slider = document.querySelectorAll('.swiper');
-    const swiperWrapper = document.querySelectorAll('.swiper-wrapper')
-    slider.forEach(item => {
-      item.classList.remove('swiper')
-    });
-    swiperWrapper.forEach(item => {
-      item.classList.remove('swiper-wrapper')
-    });
   }
 }
 
 
+function swiperStyles(){
+  const slider = document.querySelectorAll('.swiper-container');
+  const swiperWrapper = document.querySelectorAll('.swiper-container-wrapper')
+  if(window.innerWidth >= 768){
+    
+    slider.forEach(item => {
+      if(item.classList.contains('swiper')){
+        item.classList.remove('swiper');
+      }
+    });
+    swiperWrapper.forEach(item => {
+      if(item.classList.contains('swiper-wrapper')){
+        item.classList.remove('swiper-wrapper')
+      }  
+    });
+  }else if(window.innerWidth < 768){
+    slider.forEach(item => {
+      if(!item.classList.contains('swiper')){
+        item.classList.add('swiper')
+      }
+    });
+    swiperWrapper.forEach(item => {
+      if(!item.classList.contains('swiper-wrapper')){
+        item.classList.add('swiper-wrapper')
+      }
+    });
+  }
 
+}
 
 //Отображаем нужное кол-во слайдов
 const showMoreBrands = document.querySelector('.content__expand_brands');
@@ -88,6 +112,7 @@ function initItems(){
 
 
 window.addEventListener('DOMContentLoaded', initSlider);
+window.addEventListener('resize', swiperStyles);
 window.addEventListener('DOMContentLoaded', initItems);
 showMoreText.addEventListener('click', () => {
   toggleShowItems(paras, numParas, showMoreText, isMoreTextVisible);
