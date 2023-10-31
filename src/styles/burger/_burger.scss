@@ -109,5 +109,9 @@
   .menu{
     left: 0;
     box-shadow: none;
+
+    .close{
+      display: none;
+    }
   }
 }

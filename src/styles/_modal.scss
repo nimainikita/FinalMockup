@@ -109,20 +109,35 @@
 
 
 @media screen and (max-width: 540px) {
-  .btn-window {
-    position: inherit;
-    margin-top: 24px;
-    margin-left: 16px;
+  .modal-window{
+    .window-wrapper{
+      .window{
+        .btn-window {
+          position: inherit;
+          margin-top: 24px;
+          margin-left: 16px;
+        } 
+
+        .window__title::before {
+          top: 100px;
+          right: 440px;
+        }
+      } 
+    }
+
   }
-  .window__title::before {
-    top: 100px;
-    right: 440px;
-  }
+
+
 }
 @media screen and (max-width: 400px) {
-  .window input {
-    width: auto;
-    margin: 16px 16px;
-
+  .modal-window{
+    .window-wrapper{
+      .window{
+        .feedback-form, .call-form {
+          width: auto;
+          margin: 16px 16px;
+        }
+      } 
+    }
   }
 }
