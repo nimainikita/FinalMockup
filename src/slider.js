@@ -112,6 +112,7 @@ function initItems(){
 
 
 window.addEventListener('DOMContentLoaded', initSlider);
+window.addEventListener('DOMContentLoaded', swiperStyles);
 window.addEventListener('resize', swiperStyles);
 window.addEventListener('DOMContentLoaded', initItems);
 showMoreText.addEventListener('click', () => {
