@@ -7,23 +7,27 @@ import 'swiper/css/pagination';
 
 //Слайдер
 function initSlider(){
+  let swiper;
   if(window.innerWidth < 768){
-    console.log("ехехе")
-    let swiper = new Swiper('.swiper', {
-      slidesPerView: "auto",
-      direction: "horizontal",
-      loop:true,
-      spaceBetween: 15,
-      pagination:{
-        el:".swiper-pagination"
-      },
-      breakpoints:{
-        768:{
-          enabled: true,
-        }
-      },
-      modules: [Navigation, Pagination],
-    })
+    if(!swiper){
+      console.log("ехехе")
+      swiper = new Swiper('.swiper', {
+        slidesPerView: "auto",
+        direction: "horizontal",
+        loop:true,
+        spaceBetween: 15,
+        pagination:{
+          el:".swiper-pagination"
+        },
+        breakpoints:{
+          768:{
+            enabled: true,
+          }
+        },
+        modules: [Navigation, Pagination],
+      })
+    }
+
   }
 }
 
@@ -112,8 +116,9 @@ function initItems(){
 
 
 window.addEventListener('DOMContentLoaded', initSlider);
-window.addEventListener('DOMContentLoaded', swiperStyles);
+window.addEventListener('resize', initSlider);
 window.addEventListener('resize', swiperStyles);
+window.addEventListener('DOMContentLoaded', swiperStyles);
 window.addEventListener('DOMContentLoaded', initItems);
 showMoreText.addEventListener('click', () => {
   toggleShowItems(paras, numParas, showMoreText, isMoreTextVisible);
